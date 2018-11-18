@@ -32,6 +32,12 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerHelper('getcurrentYear', () => {
     return new Date().toDateString();
 })
+app.get('/', function (req, res) {
+    // res.send('inside about page')
+    res.render('about.hbs', {
+        pageTittle: 'About Page'
+    });
+})
 
 app.get('/about', function (req, res) {
     // res.send('inside about page')
