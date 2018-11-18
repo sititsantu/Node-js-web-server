@@ -4,6 +4,7 @@ const string = require('string');
 const request = require('request');
 const bodyParser = require("body-parser");
 const apiKey = 'e9c5cd97467e0dbe9920900aa3c09c05';
+const port =process.env.PORT || 3000;
 
 const fs =require('fs');
 
@@ -80,8 +81,8 @@ app.post('/temperature', function (req, res) {
 })
 
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000');
+app.listen(port, () => {
+    console.log(`server is up on port ${port}`);
 });
 
 // app.get('/', function (req, res) {
